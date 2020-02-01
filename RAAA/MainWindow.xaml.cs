@@ -85,55 +85,7 @@ namespace RAAA
                 };
                 Process.Start(pInfo);
 
-                        ////Process.Start("C:\\WINDOWS\\system32\\mspaint.exe");
-                        //using (powerShell = PowerShell.Create())
-                        //{
-                        //    //here “executableFilePath” need to use in place of “  
-                        //    //'C:\\ApplicationRepository\\FileZilla_3.14.1_win64-setup.exe'”  
-                        //    //but I am using the path directly in the script.  
-
-                        //   // var credentials = new UserCredentials("WORKGROUP", "testuser", "123456");
-                        //    //Impersonation.RunAsUser(credentials, LogonType.Batch, () =>
-                        //    //{
-                    
-                  
-
-                        //        // Process.Start("C:\\Users\\Bobby\\Downloads\\NordVPNSetup.exe");
-                        //        //System.Diagnostics.Process.Start("C:\\WINDOWS\\system32\\mspaint.exe");
-
-                        //        // powerShell.AddScript("$setup=Start-Process 'C:\\Users\\Bobby\\Downloads\\Notion.exe ' -ArgumentList ' / S ' -Wait -PassThru");
-                        //        //powerShell.Invoke();
-                        //    //});
-
-                        //    /*
-
-                   
-                        //    System.Diagnostics.Process.Start("C:\\Users\\Bobby\\Downloads\\NordVPNSetup.exe");
-
-                        //    //powerShell.Invoke();
-
-
-                        //    Collection < PSObject > PSOutput = powerShell.Invoke(); foreach (PSObject outputItem in PSOutput)
-                        //    {
-
-                        //        if (outputItem != null)
-                        //        {
-
-                        //            Console.WriteLine(outputItem.BaseObject.GetType().FullName);
-                        //            Console.WriteLine(outputItem.BaseObject.ToString() + "\n");
-                        //        }
-                        //    }
-
-                        //    if (powerShell.Streams.Error.Count > 0)
-                        //    {
-                        //        string temp = powerShell.Streams.Error.First().ToString();
-                        //        Console.WriteLine("Error: {0}", temp);
-
-                        //    }
-                        //    else
-                        //        Console.WriteLine("Installation has completed successfully."); */
-
-                        //}
+                       
             }
             catch (Exception ex)
             {
@@ -149,3 +101,56 @@ namespace RAAA
         }
     }
 }
+
+
+
+
+////Process.Start("C:\\WINDOWS\\system32\\mspaint.exe");
+//using (powerShell = PowerShell.Create())
+//{
+//    //here “executableFilePath” need to use in place of “  
+//    //'C:\\ApplicationRepository\\FileZilla_3.14.1_win64-setup.exe'”  
+//    //but I am using the path directly in the script.  
+
+//   // var credentials = new UserCredentials("WORKGROUP", "testuser", "123456");
+//    //Impersonation.RunAsUser(credentials, LogonType.Batch, () =>
+//    //{
+
+
+
+//        // Process.Start("C:\\Users\\Bobby\\Downloads\\NordVPNSetup.exe");
+//        //System.Diagnostics.Process.Start("C:\\WINDOWS\\system32\\mspaint.exe");
+
+//        // powerShell.AddScript("$setup=Start-Process 'C:\\Users\\Bobby\\Downloads\\Notion.exe ' -ArgumentList ' / S ' -Wait -PassThru");
+//        //powerShell.Invoke();
+//    //});
+
+//    /*
+
+
+//    System.Diagnostics.Process.Start("C:\\Users\\Bobby\\Downloads\\NordVPNSetup.exe");
+
+//    //powerShell.Invoke();
+
+
+//    Collection < PSObject > PSOutput = powerShell.Invoke(); foreach (PSObject outputItem in PSOutput)
+//    {
+
+//        if (outputItem != null)
+//        {
+
+//            Console.WriteLine(outputItem.BaseObject.GetType().FullName);
+//            Console.WriteLine(outputItem.BaseObject.ToString() + "\n");
+//        }
+//    }
+
+//    if (powerShell.Streams.Error.Count > 0)
+//    {
+//        string temp = powerShell.Streams.Error.First().ToString();
+//        Console.WriteLine("Error: {0}", temp);
+
+//    }
+//    else
+//        Console.WriteLine("Installation has completed successfully."); */
+
+//}
