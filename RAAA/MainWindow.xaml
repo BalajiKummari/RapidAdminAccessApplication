@@ -1,0 +1,38 @@
+﻿<Window x:Class="RAAA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RAAA"
+        mc:Ignorable="d"
+        Title="Rapid Application Installation" Height="700" Width="800">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,3,2">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.583"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="83*"/>
+            <ColumnDefinition Width="614*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="BtFileSelect" Content="Select A Installation File" Grid.Column="1" HorizontalAlignment="Center" Margin="0,73,0,0" VerticalAlignment="Top" Height="31" Width="288" Click="Button_Click"/>
+        <Label Name="LbFileMetaData" Content="Installation Details Will Appear here" Grid.Column="1" HorizontalAlignment="Left" Margin="11,112,0,0" VerticalAlignment="Top" Width="378" Height="25"/>
+        <ListView Name="LvData" Grid.Column="1" Margin="12,145,31,90">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="btRequest" Content="Request For Premission" Grid.Column="1" HorizontalAlignment="Left" Margin="61,630,0,0" VerticalAlignment="Top" Width="182"/>
+        <Button Name="btInstall" Content="Install" Grid.Column="1" HorizontalAlignment="Left" Margin="371,630,0,0" VerticalAlignment="Top" Width="182" Click="btInstall_Click"/>
+        <TextBlock Name="lbuser" Grid.Column="1" HorizontalAlignment="Left" Margin="543,28,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
