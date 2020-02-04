@@ -7,17 +7,21 @@ using System.Management.Automation;
 using System.Security.Principal;
 using System.Diagnostics;
 using System.Security.Permissions;
+using System.Runtime.InteropServices;
+using Microsoft.Win32.SafeHandles;
 
 namespace RAAA
 {
-    
+
+
+
     [PrincipalPermission(SecurityAction.Demand, Role = @"BUILTIN\Administrators")]
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-             lbuser.Text = WindowsIdentity.GetCurrent().Name;
+            lbuser.Text = WindowsIdentity.GetCurrent().Name;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,14 +48,14 @@ namespace RAAA
                     break;
                 arrHeaders.Add(header);
             }
-            string metadata = "" ;
+            string metadata = "";
             for (int i = 0; i < arrHeaders.Count; i++)
             {
-                 metadata = metadata + i +"." + arrHeaders[i] +":" + objFolder.GetDetailsOf(folderItem, i) +"\n";
+                metadata = metadata + i + "." + arrHeaders[i] + ":" + objFolder.GetDetailsOf(folderItem, i) + "\n";
                 LvData.Items.Add(metadata);
             }
-            LbFileMetaData.Content = "selected Path : " + fInfo.FullName; 
-            }
+            LbFileMetaData.Content = "selected Path : " + fInfo.FullName;
+        }
 
         // Start Process as a Administrator
         private void btInstall_Click(object sender, RoutedEventArgs e)
@@ -59,12 +63,16 @@ namespace RAAA
             DeployApplications();
         }
 
-        public  void DeployApplications()
+        public void DeployApplications()
         {
             PowerShell powerShell = null;
-            
+
             try
             {
+
+               
+                //string UAC_key = @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System";
+                //Registry.SetValue(UAC_key, "EnableLUA", 1);
 
                 lbuser.Text = WindowsIdentity.GetCurrent().Name;
                 var myFile = "C:\\Users\\Public\\npp.exe";//"C:\\Users\\Bobby\\Downloads\\notion.exe";
@@ -75,22 +83,26 @@ namespace RAAA
                     Arguments = "",
                     LoadUserProfile = true,
                     UseShellExecute = false,
-                    // UserName = "Sp",
-                    // Domain = "WORKGROUP",
-                    // Verb= "runas",
-                    //  PasswordInClearText = "123456",
+                    UserName = "siva.s",
+                    Domain = "technovert",
+                    Verb = "runas",
+                    PasswordInClearText = txtPassword.Password,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true
 
                 };
                 Process.Start(pInfo);
+                // Check the identity.  
+                MessageBox.Show("During impersonation: " + WindowsIdentity.GetCurrent().Name);
 
-                       
+
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error occured: {0}", ex.InnerException);
                 //throw;  
+                MessageBox.Show(ex.Message);
             }
             finally
             {

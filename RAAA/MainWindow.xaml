@@ -33,6 +33,7 @@
         <Button Name="btRequest" Content="Request For Premission" Grid.Column="1" HorizontalAlignment="Left" Margin="61,630,0,0" VerticalAlignment="Top" Width="182"/>
         <Button Name="btInstall" Content="Install" Grid.Column="1" HorizontalAlignment="Left" Margin="371,630,0,0" VerticalAlignment="Top" Width="182" Click="btInstall_Click"/>
         <TextBlock Name="lbuser" Grid.Column="1" HorizontalAlignment="Left" Margin="543,28,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPassword" Grid.Column="1" HorizontalAlignment="Left" Margin="368,601,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
