@@ -75,7 +75,7 @@ namespace RAAA
                 //Registry.SetValue(UAC_key, "EnableLUA", 1);
 
                 lbuser.Text = WindowsIdentity.GetCurrent().Name;
-                var myFile = "C:\\Users\\Public\\npp.exe";//"C:\\Users\\Bobby\\Downloads\\notion.exe";
+                var myFile = "C:\\NORD.exe";//"C:\\Users\\Bobby\\Downloads\\notion.exe";
                 var pInfo = new ProcessStartInfo
                 {
                     FileName = myFile,
@@ -83,10 +83,10 @@ namespace RAAA
                     Arguments = "",
                     LoadUserProfile = true,
                     UseShellExecute = false,
-                    UserName = "siva.s",
-                    Domain = "technovert",
+                    UserName = "Bobby",
+                    Domain = "WORKGROUP",
                     Verb = "runas",
-                    PasswordInClearText = txtPassword.Password,
+                    PasswordInClearText = "5456",
                     RedirectStandardOutput = true,
                     RedirectStandardError = true
 
